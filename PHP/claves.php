@@ -22,14 +22,14 @@
   $nameValue = $_GET['value'];
   $redis=new Redis();
   $redis -> pconnect('127.0.0.1', 6379);
-  if(!($redis -> sismember('nombres11', $nameKey))){
-     $redis->sadd('nombres11',$nameKey);
-     $redis -> hset('nombres1HH',$nameKey,$nameValue);
+  if(!($redis -> sismember('nombres1', $nameKey))){
+     $redis->sadd('nombres1',$nameKey);
+     $redis -> hset('nombres1H',$nameKey,$nameValue);
      $last=$nameKey;
   }
   if(isset($last)):
    $unArray = array();
-   $unArray = $redis -> hgetall('nombres1HH');
+   $unArray = $redis -> hgetall('nombres1H');
  ?>
   <hr />
   <i><b><?= $last ?></i></b>

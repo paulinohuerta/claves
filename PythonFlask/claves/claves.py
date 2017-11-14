@@ -18,10 +18,10 @@ def home():
    key = request.args.get('key')
    value = request.args.get('value')
    r = redis.StrictRedis(host='localhost', port=6379)
-   if not r.sismember('nombres11',key):
-     r.sadd('nombres11',key)
-     r.hset('nombres1HH',key,value)
-     elementos=r.hgetall('nombres1HH')
+   if not r.sismember('nombres1',key):
+     r.sadd('nombres1',key)
+     r.hset('nombres1H',key,value)
+     elementos=r.hgetall('nombres1H')
      last=key
   response = make_response(render_template("home.html", elementos=elementos,last=last))
   return response
