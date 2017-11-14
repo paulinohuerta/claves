@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+</h:head>
+<h:body>
+<h2>CRUD Primer estadio</h2>
+<h3>Add Data</h3>
+<h:form>
+<p>Key:
+<h:inputText value="#{obj.key}"/>
+</p>
+<p>Value:
+<h:inputText value="#{obj.value}" />
+</p>
+<p>
+<h:commandButton value="add" action="#{obj.add}" />
+</p>
+</h:form>
+<h:panelGroup layout="block" id="container" rendered="#{obj.good}">
+ <h:outputText value="#{obj.last}" /> 
+ <hr />
+ <h:dataTable value="#{obj.listClaves}" var="item">
+  <h:column>
+    #{obj.listClaves.indexOf(item)}
+  </h:column>
+  <h:column>
+   <h:outputText value="#{item.key}" rendered="#{item.key ne obj.last}" />
+   <b><i><h:outputText value="#{item.key}" rendered="#{item.key eq obj.last}" /></i></b>
+  </h:column>
+  <h:column>
+   <h:outputText value="#{item.value}" />
+  </h:column>
+ </h:dataTable>
+</h:panelGroup>
+</h:body>
+</html>
