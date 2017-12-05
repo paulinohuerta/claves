@@ -4,12 +4,12 @@
  </head>
 <body>
   <h2>CRUD Primer estadio</h2>
-  <h3>Add Data</h3>
+  <h3>Añadir Datos</h3>
   <form name="search" method="get">
-  <p>Key:
+  <p>Clave:
     <input name="key" type="text"/>
   </p>
-  <p>Value:
+  <p>Valores:
     <input name="value" type="text"/>
   </p>
   <p>
@@ -25,8 +25,8 @@
   <table style="width:60%">
     {% for key,value in elementos.items() %}
      <tr>
-      <td>{{key}}</td>
-      <td>{{value}}</td>
+      <td>Clave:{{key}}</td>
+      <td>Valor:{{value}}</td>
      </tr>
     {% endfor %}
   </table> 
