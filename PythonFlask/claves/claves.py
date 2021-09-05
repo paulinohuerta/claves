@@ -5,8 +5,6 @@ from flask import request
 from flask import make_response
 import redis
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 
 app= Flask(__name__)
 

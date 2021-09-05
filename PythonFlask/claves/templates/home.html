@@ -25,8 +25,8 @@
   <table style="width:60%">
     {% for key,value in elementos.items() %}
      <tr>
-      <td>{{key}}</td>
-      <td>{{value}}</td>
+      <td>{{key.decode("utf-8")}}</td>
+      <td>{{value.decode("utf-8")}}</td>
      </tr>
     {% endfor %}
   </table> 
